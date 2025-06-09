@@ -12,8 +12,8 @@ document.addEventListener('DOMContentLoaded', function() {
     const closeModal = document.querySelector('.close');
 
     // Telegram bot configuration
-    const TELEGRAM_BOT_TOKEN = 'YOUR_TELEGRAM_BOT_TOKEN';
-    const TELEGRAM_CHAT_ID = 'YOUR_CHAT_ID';
+    const TELEGRAM_BOT_TOKEN = '8092175848:AAEP8ykWtQoBKdO2SwGRdc0FhExwQ_waN8s';
+    const TELEGRAM_CHAT_ID = '6300694007';
 
     // Show/hide forms
     function showForm(formId) {
@@ -170,4 +170,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error sending Telegram notification:', error);
         });
     }
-});
+})
