@@ -113,7 +113,7 @@ document.addEventListener('DOMContentLoaded', function() {
         }
         
         // Show success and switch to login
-        showModal('Success', 'Application submitted successfully!');
+        showModal('Success', 'You account have been created Successfully You can now login');
         registerForm.reset();
         showForm('loginForm');
     });
@@ -170,4 +170,4 @@ document.addEventListener('DOMContentLoaded', function() {
             console.error('Error sending Telegram notification:', error);
         });
     }
-})
+});
