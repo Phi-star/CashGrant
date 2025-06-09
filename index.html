@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grant Cash | Online Cash Grants Platform</title>
+    <link rel="stylesheet" href="index.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <div class="logo">
+                <h1><span>Grant</span>Cash</h1>
+                <p>Your pathway to financial support</p>
+            </div>
+        </header>
+
+        <div class="hero-section">
+            <div class="hero-content">
+                <h2>Get Lucky Cash Grants Online</h2>
+                <p>Join thousands who have received financial support through our platform. Register now for your chance to be selected!</p>
+                <div class="cta-buttons">
+                    <button id="showRegisterBtn" class="btn btn-primary">Apply Now</button>
+                    <button id="showLoginBtn" class="btn btn-outline">Already Applied?</button>
+                </div>
+            </div>
+            <div class="hero-image">
+                <img src="https://images.unsplash.com/photo-1579621970563-ebec7560ff3e?ixlib=rb-1.2.1&auto=format&fit=crop&w=500&q=80" alt="Happy grant recipient">
+            </div>
+        </div>
+
+        <div class="auth-container">
+            <!-- Login Form -->
+            <div id="loginForm" class="form-container" style="display: none;">
+                <h2>Sign In</h2>
+                <form id="loginFormElement">
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="password" placeholder="Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Sign In</button>
+                    <p class="toggle-form">Don't have an account? <a href="#" id="showRegister">Create One</a></p>
+                </form>
+            </div>
+
+            <!-- Register Form -->
+            <div id="registerForm" class="form-container" style="display: none;">
+                <h2>Create your Account</h2>
+                <form id="registerFormElement">
+                    <div class="input-group">
+                        <i class="fas fa-user"></i>
+                        <input type="text" id="reg-name" placeholder="Full Name" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-envelope"></i>
+                        <input type="email" id="reg-email" placeholder="Email Address" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-phone"></i>
+                        <input type="tel" id="reg-phone" placeholder="Phone Number" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="reg-password" placeholder="Password" required>
+                    </div>
+                    <div class="input-group">
+                        <i class="fas fa-lock"></i>
+                        <input type="password" id="reg-confirm" placeholder="Confirm Password" required>
+                    </div>
+                    <button type="submit" class="btn btn-primary">Create Account</button>
+                    <p class="toggle-form">Have an Account already? <a href="#" id="showLogin">Sign In</a></p>
+                </form>
+            </div>
+        </div>
+
+        <section class="success-stories">
+            <h2>Success Stories</h2>
+            <div class="stories-grid">
+                <div class="story-card">
+                    <div class="story-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Sarah J.</h3>
+                    <p>"Received $2,000 last month! This grant helped me start my small business."</p>
+                    <div class="story-date">March 2023</div>
+                </div>
+                <div class="story-card">
+                    <div class="story-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Michael T.</h3>
+                    <p>"I was selected twice! Used the funds to pay for my education. Life-changing!"</p>
+                    <div class="story-date">January 2023</div>
+                </div>
+                <div class="story-card">
+                    <div class="story-avatar">
+                        <i class="fas fa-user-circle"></i>
+                    </div>
+                    <h3>Priya K.</h3>
+                    <p>"Never thought I'd get selected. The $1,500 came at the perfect time!"</p>
+                    <div class="story-date">November 2022</div>
+                </div>
+            </div>
+        </section>
+
+        <section class="how-it-works">
+            <h2>How It Works</h2>
+            <div class="steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h3>Register</h3>
+                    <p>Create your free account with basic information</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h3>Get Selected</h3>
+                    <p>Our system randomly selects recipients weekly</p>
+                </div>
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h3>Receive Funds</h3>
+                    <p>Selected applicants receive direct bank transfers</p>
+                </div>
+            </div>
+        </section>
+
+        <!-- Success Modal -->
+        <div id="successModal" class="modal">
+            <div class="modal-content">
+                <span class="close">&times;</span>
+                <h2 id="modalTitle">Success</h2>
+                <p id="modalMessage">Account created successfully!</p>
+            </div>
+        </div>
+    </div>
+
+    <footer>
+        <div class="footer-content">
+            <div class="footer-logo">
+                <h3><span>Grant</span>Cash</h3>
+                <p>Financial opportunities for everyone</p>
+            </div>
+            <div class="footer-links">
+                <a href="#">About Us</a>
+                <a href="#">Terms</a>
+                <a href="#">Privacy</a>
+                <a href="#">Contact</a>
+            </div>
+        </div>
+        <div class="copyright">
+            &copy; 2025 Grant Cash. All rights reserved.
+        </div>
+    </footer>
+
+    <script src="index.js"></script>
+</body>
+</html>
